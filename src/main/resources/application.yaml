@@ -5,3 +5,15 @@ server:
 spring:
   profiles:
     active: local
+  rabbitmq:
+    username: guest
+    password: guest
+    addresses: localhost:5672
+  application:
+    name: worker
+
+worker:
+  rabbit:
+    queue:
+      notifications-destination: q.worker.notifications
+      norifications-delay-store: q.worker.notifications-store

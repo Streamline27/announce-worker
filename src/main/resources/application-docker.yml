@@ -1,0 +1,17 @@
+server:
+  tomcat:
+    accesslog:
+     enabled: true
+     prefix: weathertask
+     rename-on-rotate: true
+     directory: /logs
+spring:
+  profiles:
+    active: docker
+  application:
+    name: ${INSTANCE_NAME}
+spring:
+  rabbitmq:
+    addresses: ${RABBIT_ADDRESSES}
+    username: ${RABBIT_USERNAME}
+    password: ${RABBIT_PASSWORD}
