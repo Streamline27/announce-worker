@@ -10,7 +10,6 @@ spring:
     active: docker
   application:
     name: ${INSTANCE_NAME}
-spring:
   rabbitmq:
     addresses: ${RABBIT_ADDRESSES}
     username: ${RABBIT_USERNAME}
