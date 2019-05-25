@@ -16,7 +16,7 @@ class WorkerController(
     private val log = LoggerFactory.getLogger(WorkerController::class.java)
 
     @GetMapping("/hello")
-    fun hello() = "Hello from service:" + properties.applicationName
+    fun hello() = "Hello from service: " + properties.applicationName
 
     @PostMapping("/notification")
     fun send(@RequestBody message: String): Result {
