@@ -1,0 +1,12 @@
+version: '3.5'
+services:
+  announce.worker:
+    build: ./
+    image: streamline27/announce.worker:latest
+    container_name: announce.worker
+    ports:
+      - "8381:8381"
+    environment:
+      - "spring.profiles.active=docker"
+#    volumes:
+#      - "/Users/Vladislav/Development/Home/Kotlin/logs:/logs"

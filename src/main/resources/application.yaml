@@ -1,0 +1,7 @@
+server:
+  port: 8381
+  servlet:
+    context-path: /worker
+spring:
+  profiles:
+    active: local
