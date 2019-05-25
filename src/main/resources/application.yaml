@@ -13,7 +13,8 @@ spring:
     name: worker
 
 worker:
+  notification-delay-millis: 5000
   rabbit:
     queue:
       notifications-destination: q.worker.notifications
-      norifications-delay-store: q.worker.notifications-store
+      notifications-delay-store: q.worker.notifications-store

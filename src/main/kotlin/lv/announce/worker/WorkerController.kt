@@ -21,7 +21,7 @@ class WorkerController(
     @PostMapping("/notification")
     fun send(@RequestBody message: String): Result {
         log.info("Notification: Forwarding to push queue message:[$message]")
-        rabbitTemplate.convertAndSend(properties.workerNotificationsDelayQueueName, message)
+        rabbitTemplate.convertAndSend(properties.workerNotificationsDelayStoreQueueName, message)
         return Result(
                 message = message,
                 serviceName = properties.applicationName

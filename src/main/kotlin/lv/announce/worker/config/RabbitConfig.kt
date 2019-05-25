@@ -18,14 +18,13 @@ class RabbitConfig(val properties: WorkerProperties) {
     fun queue(): Queue {
         val arguments = mapOf(
                 "x-dead-letter-exchange" to DEFAULT_EXCHANGE_NAME,
-                "x-message-ttl" to NOTIFICATION_DELAY_MILLIS,
+                "x-message-ttl" to properties.notificationDelayMillis,
                 "x-dead-letter-routing-key" to properties.workerNotificationsDestinationQueueName
         )
-        return Queue(properties.workerNotificationsDelayQueueName, true, false, false, arguments)
+        return Queue(properties.workerNotificationsDelayStoreQueueName, true, false, false, arguments)
     }
 
     companion object {
         const val DEFAULT_EXCHANGE_NAME = ""
-        const val NOTIFICATION_DELAY_MILLIS = 15000
     }
 }
