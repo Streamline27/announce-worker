@@ -1,4 +1,4 @@
-package lv.announce.worker.config
+package lv.announce.worker
 
 import org.springframework.amqp.core.Queue
 import org.springframework.amqp.rabbit.connection.ConnectionFactory
