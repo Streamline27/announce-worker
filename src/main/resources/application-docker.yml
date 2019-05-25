@@ -2,7 +2,7 @@ server:
   tomcat:
     accesslog:
      enabled: true
-     prefix: weathertask
+     prefix: worker
      rename-on-rotate: true
      directory: /logs
 spring:
